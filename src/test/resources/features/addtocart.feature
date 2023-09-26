@@ -1,5 +1,6 @@
-Feature: login feature
+Feature: addtocart feature
 
+@addtocart
   Scenario: verify personal information is verified
     Given user launchs shopwitheg application
     When user clicks on login button

@@ -4,14 +4,23 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utility.DriverFactory;
+import pages.AddToCart;
 import pages.LandingPage;
 import pages.LoginPage;
+import pages.MensProductDetails;
+import pages.MensProducts;
 
 public class StepDefination  extends DriverFactory {
 	
 	LandingPage landingpage = new LandingPage(driver);
 	
 	LoginPage loginpage = new LoginPage(driver);
+	
+	MensProducts mensproducts = new MensProducts(driver);
+	
+	MensProductDetails mensproductdetails = new MensProductDetails(driver);
+	
+	AddToCart addtocart = new AddToCart(driver);
 	
 	@Given("user launchs shopwitheg application")
 	public void user_launchs_shopwitheg_application() {
@@ -42,7 +51,8 @@ public class StepDefination  extends DriverFactory {
 
 	@When("user enters valid username and password")
 	public void user_enters_valid_username_and_password() {
-	    
+	    loginpage.entervalidEmail();
+	    loginpage.entervalidpassword();
 	}
 
 	@Then("verify the user successfully logged in")
@@ -82,27 +92,27 @@ public class StepDefination  extends DriverFactory {
 	
 	@Then("user clicks on men")
 	public void user_clicks_on_men() {
-	   
+	   landingpage.clickmenspage();
 	}
 
 	@Then("user select the product")
 	public void user_select_the_product() {
-	    
+	    mensproducts.clickproductname1();
 	}
 
 	@Then("user select size")
 	public void user_select_size() {
-	    
+	    mensproductdetails.clickviewdetails();
 	}
 
 	@Then("user select colour")
 	public void user_select_colour() {
-	   
+	   mensproductdetails.clicksize();
 	}
 
 	@Then("user clicks add to cart")
 	public void user_clicks_add_to_cart() {
-	   
+		addtocart.clickaddtocart();
 	}
 
 	@Then("verify product is added successfully")
@@ -112,7 +122,7 @@ public class StepDefination  extends DriverFactory {
 	
 	@Then("user navigate to shopwitheg reset password")
 	public void user_navigate_to_shopwitheg_reset_password() {
-	    
+	    System.out.println();
 	}
 
 	@Then("user enter old password")

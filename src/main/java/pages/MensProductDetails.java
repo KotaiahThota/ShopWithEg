@@ -29,9 +29,19 @@ public class MensProductDetails extends DriverFactory {
 	
 	public void clickviewdetails()
 	{
-		
+		detailspage.click();
 	}
-
 	
+	public void clicksize()
+	
+	{
+		size.click();
+	}
+	
+	public void clickcolour()
+	
+	{
+		colour.click();
+	}
 	
 }
