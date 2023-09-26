@@ -123,6 +123,7 @@ public class StepDefination  extends DriverFactory {
 	@Then("user navigate to shopwitheg reset password")
 	public void user_navigate_to_shopwitheg_reset_password() {
 	    System.out.println();
+	    System.out.println();
 	}
 
 	@Then("user enter old password")
